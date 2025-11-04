@@ -1,5 +1,5 @@
 venv/
 .venv
 src/config.json
-database.ini
+src/database.ini
 src/__pycache__
