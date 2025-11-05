@@ -24,6 +24,17 @@ Storage account -> Shared access signature, add VM IP to allowed IP-addresses
 
 Connection string from storage account to BlobClient()
 
+## Postman + Flask on VM (postVM)
+
+- Add port (5000) in Azure to the allowed ports
+- app.run(host='0.0.0.0') # show the app endpoints to external
+- keep the app Running on the VM
+
+## reportvm
+
+- SQL query + save report
+- SDK to send the report to blob storage
+
 ## ssh key
 
 We generated ssh-keys for connecting our github repo with our VM. 
@@ -35,8 +46,3 @@ Added the public and private keys to our VM and the public key as deploy key to 
 Troubleshooting: ssh connection not working, not permissions to pull.
 - `eval $(ssh-agent -s)`
 - `ssh-add ~/.ssh/id_rsa`
-
-## Postman + Flask on VM
-
-- Add port (5000) in Azure to the allowed ports
-- app.run(host='0.0.0.0') # show the app endpoints to external
