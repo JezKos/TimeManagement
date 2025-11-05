@@ -7,14 +7,20 @@
 
 `python3 -m venv venv`
 
+Installing packages and creating requirements file:
+
+pip freeze > requirements.txt
 
 
 ## Creating VM and managing access/identity
 
-- Followed the steps to setup ubuntu22.04 on the VM.
+- Followed the steps of the rosehosting tutorial to setup ubuntu22.04 on the VM.
 - Virtual environment from the requirements.txt
 
-Storage account -> Shared access signature
+
+Storage account -> Shared access signature, add VM IP to allowed IP-addresses
+- Identity: managed-identity on
+- Add role
 
 ## ssh key
 
