@@ -6,6 +6,8 @@ app = Flask(__name__)
 
 #needed:
 #input whole row
+
+
 @app.route("/entry", methods=['POST'])
 def create_entry():
     try: 
@@ -23,4 +25,4 @@ def create_entry():
     
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=True)
