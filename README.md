@@ -26,7 +26,8 @@ Connection string from storage account to BlobClient()
 
 ## Postman + Flask on VM (postVM)
 
-- Add port (5000) in Azure to the allowed ports
+- Add port (5000) in Azure to the allowed ports:
+`az vm open-port --resource-group $RESOURCE_GROUP --name $VM2_NAME --port 5000 --priority 1001`
 - app.run(host='0.0.0.0') # show the app endpoints to external
 - keep the app Running on the VM
 
