@@ -20,7 +20,9 @@ pip freeze > requirements.txt
 
 Storage account -> Shared access signature, add VM IP to allowed IP-addresses
 - Identity: managed-identity on
-- Add role
+- Access control: Add role storage account contributor
+
+Connection string from storage account to BlobClient()
 
 ## ssh key
 
@@ -34,4 +36,7 @@ Troubleshooting: ssh connection not working, not permissions to pull.
 - `eval $(ssh-agent -s)`
 - `ssh-add ~/.ssh/id_rsa`
 
-## 
+## Postman + Flask on VM
+
+- Add port (5000) in Azure to the allowed ports
+- app.run(host='0.0.0.0') # show the app endpoints to external
