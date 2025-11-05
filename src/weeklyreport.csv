@@ -1,0 +1,11 @@
+consultantname,customername,starttime,shift_time,lunch_time,working_hours
+John Doe,Ernst & Young Oy,2025-11-04 08:00:00,8.00,0.50,7.50
+Harley Queen,Pwc Oy,2025-11-04 10:00:00,5.00,1.00,4.00
+Harry Potter,Beaubatons,2025-11-02 09:00:00,11.00,0.00,11.00
+Harry Potter,Beaubatons,2025-11-03 09:00:00,9.00,0.00,9.00
+John Doe,Skillio,2025-11-02 09:10:00,6.88,0.83,6.05
+John Doe,Ernst & Young Oy,2025-11-01 08:10:00,6.88,0.83,6.05
+Harley Queen,Ernst & Young Oy,2025-11-03 08:05:00,2.97,0.25,2.72
+Harley Queen,Pwc Oy,2025-11-03 12:30:00,4.00,0.25,3.75
+John Doe,Ernst & Young Oy,2025-11-05 08:00:00,8.00,0.50,7.50
+Harley Queen,Pwc Oy,2025-11-05 10:00:00,5.00,1.00,4.00
