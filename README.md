@@ -3,11 +3,12 @@
 ## Creating the database and tables
 
 
+
 ## Creating virtual environment
 
 `python3 -m venv venv`
 
-Installing packages and creating requirements file:
+Installing packages and creating requirements file.
 
 pip freeze > requirements.txt
 
@@ -47,3 +48,8 @@ Added the public and private keys to our VM and the public key as deploy key to 
 Troubleshooting: ssh connection not working, not permissions to pull.
 - `eval $(ssh-agent -s)`
 - `ssh-add ~/.ssh/id_rsa`
+
+## Azure key vault
+
+Adding keys in Azure to the group.
+- Add permissions to the key vault to the VMs
