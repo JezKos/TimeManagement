@@ -4,3 +4,4 @@ src/config.json
 src/database.ini
 src/__pycache__
 src/data/reportvm_key.pem
+src/data/postvm.pem

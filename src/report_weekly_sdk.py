@@ -15,6 +15,9 @@ def upload_blob_file(blob_service_client, container_name):
     with open(file=os.path.join('/home/azureuser/TimeManagement/src', 'weeklyreport.csv'), mode="rb") as data:
         blob_client = container_client.upload_blob(name=f"weeklyreport {today_stamp}.csv", data=data, overwrite=True)
         
+    with open(file=os.path.join('/home/azureuser/TimeManagement/src', 'customer_weeklyreport.csv'), mode="rb") as data:
+        container_client.upload_blob(name=f"customer_weeklyreport {today_stamp}.csv", data=data, overwrite=True)
+        
 upload_blob_file(blob_service_client, "report-container")
 
 #container_name = "report-container"

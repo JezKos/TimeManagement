@@ -46,6 +46,21 @@ class Queries():
             df = pd.DataFrame(self.cursor.fetchall())
             df.columns = [desc[0] for desc in self.cursor.description]
             return df
-
+        except (Exception, psycopg2.DatabaseError) as error:
+            print(f"Error querying table {error}")
+            
+    def get_customer_report(self, start_date, end_date):
+        """Get report between start_date and end_date grouped by customerName
+        Args:
+            start_date, end_date, dates in format YYYY-MM-DD
+        """
+        try:
+            query = f"""SELECT customerName, COUNT(consultantName) AS number_of_consultants, 
+                        SUM(ROUND((EXTRACT(EPOCH FROM (endtime - starttime)) / 3600),2) - ROUND((EXTRACT(EPOCH FROM (lunchend - lunchstart)) / 3600),2)) AS working_hours 
+                        FROM time_entries WHERE DATE(starttime) BETWEEN  %s AND %s GROUP BY customerName;"""
+            self.cursor.execute(query, (start_date, end_date))
+            df = pd.DataFrame(self.cursor.fetchall())
+            df.columns = [desc[0] for desc in self.cursor.description]
+            return df
         except (Exception, psycopg2.DatabaseError) as error:
             print(f"Error querying table {error}")
