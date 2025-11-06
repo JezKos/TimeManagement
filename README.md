@@ -22,8 +22,9 @@ pip freeze > requirements.txt
 Storage account -> Shared access signature, add VM IP to allowed IP-addresses
 - Identity: managed-identity on
 - Access control: Add role storage account contributor
+- Need permissions from account manager
 
-Connection string from storage account to BlobClient()
+
 
 ## Postman + Flask on VM (postVM)
 
