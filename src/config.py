@@ -1,6 +1,6 @@
 from configparser import ConfigParser
 
-def config(filename='database.ini', section='azure-postgresql'):
+def config(filename='data/database.ini', section='azure-postgresql'):
     parser = ConfigParser()
     parser.read(filename)
     db = {}

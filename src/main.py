@@ -13,6 +13,10 @@ df_weekly = query.get_daily_report(start_date, today_date)
 
 df_daily = query.get_daily_report(today_date, today_date)
 
+df_customer_weekly = query.get_customer_report(start_date, today_date)
+
+df_customer_daily = query.get_customer_report(today_date, today_date)
+
 #print(df_daily)
 
 query.close_connections()
@@ -24,5 +28,15 @@ except Exception as e:
 
 try:
 	df_daily.to_csv('dailyreport.csv', index = False, mode='w')
+except Exception as e:
+	print(e)
+
+try:
+	df_customer_daily.to_csv('customer_dailyreport.csv', index = False, mode='w')
+except Exception as e:
+	print(e)
+
+try:
+	df_customer_weekly.to_csv('customer_weeklyreport.csv', index = False, mode='w')
 except Exception as e:
 	print(e)
