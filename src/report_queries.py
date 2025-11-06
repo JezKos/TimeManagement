@@ -2,6 +2,18 @@ from config import config
 import pandas as pd
 import psycopg2
 import sys
+from azure.identity import DefaultAzureCredential
+from azure.keyvault.secrets import SecretClient
+
+# Replace with your Key Vault URL
+key_vault_url = "https://group3kyes.vault.azure.net"
+# Authenticate and connect to Key Vault
+credential = DefaultAzureCredential()
+client = SecretClient(vault_url=key_vault_url, credential=credential)
+# Retrieve the secret
+secret_name = "db-connection-string"
+retrieved_secret = client.get_secret(secret_name)
+#print(f"Database Connection String: {retrieved_secret.value}")
 
 class Queries():
 
@@ -16,7 +28,8 @@ class Queries():
 
         try:
             print("connect")
-            conn = psycopg2.connect(**config())
+            #conn = psycopg2.connect(**config())
+		conn = psycopg2.connect(retrievec_secret.value)
 
         except (Exception, psycopg2.DatabaseError) as error:
             print(error)
